@@ -357,7 +357,7 @@ class Metasploit3 < Msf::Auxiliary
    (finish - start) /60
    end
 
-   #Mointor my real IP before VPN is started and end connection if the VPN isn't working - 
+   #Mointor my real IP before VPN is started and sleep if the VPN isn't connected yet 
    # It isn't the best way but it was hard to syn the VPN IP schedular with the Ruby script  
    def use_vpn_connection     
        begin
@@ -410,7 +410,7 @@ class Metasploit3 < Msf::Auxiliary
     result
   end
     
-    
+    # Folder can be changed 
     datastore['EMAIL_FILE']="/home/emails_harvested_main.txt"
     datastore['EMAIL_FILE1']="/home/email_collect_data_thread1/emails.txt"
     
